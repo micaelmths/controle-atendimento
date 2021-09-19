@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sessoes",
+  "info": {
+    "name": "Sessões"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "admin_user": {
+      "plugin": "admin",
+      "model": "user"
+    },
+    "pacientes": {
+      "collection": "pacientes"
+    },
+    "data": {
+      "type": "datetime",
+      "required": true
+    },
+    "horaInicial": {
+      "type": "datetime",
+      "required": true
+    },
+    "horaFinal": {
+      "type": "datetime",
+      "required": true
+    },
+    "observacoes": {
+      "type": "string"
+    }
+  }
+}
