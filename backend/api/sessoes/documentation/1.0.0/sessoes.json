@@ -525,19 +525,14 @@
           "id": {
             "type": "string"
           },
-          "admin_user": {
+          "profissional": {
             "required": [
               "id",
+              "username",
               "email"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
                 "type": "string"
               },
               "username": {
@@ -546,28 +541,31 @@
               "email": {
                 "type": "string"
               },
+              "provider": {
+                "type": "string"
+              },
               "password": {
                 "type": "string"
               },
               "resetPasswordToken": {
                 "type": "string"
               },
-              "registrationToken": {
+              "confirmationToken": {
                 "type": "string"
               },
-              "isActive": {
+              "confirmed": {
                 "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               },
               "blocked": {
                 "type": "boolean"
               },
-              "preferedLanguage": {
+              "role": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
                 "type": "string"
               }
             }
@@ -586,6 +584,9 @@
                 "nome": {
                   "type": "string"
                 },
+                "profissional": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -600,19 +601,13 @@
             "format": "date-time"
           },
           "horaInicial": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "horaFinal": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "observacoes": {
             "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
@@ -623,7 +618,7 @@
           "horaFinal"
         ],
         "properties": {
-          "admin_user": {
+          "profissional": {
             "type": "string"
           },
           "pacientes": {
@@ -637,19 +632,13 @@
             "format": "date-time"
           },
           "horaInicial": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "horaFinal": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "observacoes": {
             "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"

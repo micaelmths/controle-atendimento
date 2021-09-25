@@ -1,7 +1,9 @@
 <template>
-  <div class="home">
-    <h1>Home</h1>
-  </div>
+  <v-container grid-list-xs fluid>
+    <v-main>
+
+    </v-main>
+  </v-container>
 </template>
 
 <script>

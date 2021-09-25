@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/17/2021 9:13:20 PM"
+    "x-generation-date": "09/19/2021 4:50:28 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3307,6 +3307,51 @@
           },
           "nome": {
             "type": "string"
+          },
+          "profissional": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -3316,6 +3361,9 @@
         ],
         "properties": {
           "nome": {
+            "type": "string"
+          },
+          "profissional": {
             "type": "string"
           },
           "created_by": {
@@ -3337,19 +3385,14 @@
           "id": {
             "type": "string"
           },
-          "admin_user": {
+          "profissional": {
             "required": [
               "id",
+              "username",
               "email"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
                 "type": "string"
               },
               "username": {
@@ -3358,28 +3401,31 @@
               "email": {
                 "type": "string"
               },
+              "provider": {
+                "type": "string"
+              },
               "password": {
                 "type": "string"
               },
               "resetPasswordToken": {
                 "type": "string"
               },
-              "registrationToken": {
+              "confirmationToken": {
                 "type": "string"
               },
-              "isActive": {
+              "confirmed": {
                 "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               },
               "blocked": {
                 "type": "boolean"
               },
-              "preferedLanguage": {
+              "role": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
                 "type": "string"
               }
             }
@@ -3398,6 +3444,9 @@
                 "nome": {
                   "type": "string"
                 },
+                "profissional": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -3412,19 +3461,13 @@
             "format": "date-time"
           },
           "horaInicial": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "horaFinal": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "observacoes": {
             "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
@@ -3435,7 +3478,7 @@
           "horaFinal"
         ],
         "properties": {
-          "admin_user": {
+          "profissional": {
             "type": "string"
           },
           "pacientes": {
@@ -3449,19 +3492,13 @@
             "format": "date-time"
           },
           "horaInicial": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "horaFinal": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
           },
           "observacoes": {
             "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"

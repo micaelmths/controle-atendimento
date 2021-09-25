@@ -1,24 +1,27 @@
 <template>
-  <div id="app">
+  <v-app id="app">
+    <ToolNavBar />
     <router-view/>
-    <Menu/>
-  </div>
+    <Menu />
+  </v-app>
 </template>
 
 <script>
 import Menu from '@/components/Menu.vue'
+import ToolNavBar from '@/components/ToolNavBar.vue'
 
 export default {
   name: 'App',
   components: {
-    Menu
+    Menu,
+    ToolNavBar
   }
 }
 </script>
 
 <style>
 :root {
-  --bg: #FAFAFA;
+  --bg: #FFFFFF;
   --primary: #439FA5;
   --secondary: #EB5BA7;
   --textColor: #FFFFFF;
@@ -42,5 +45,8 @@ export default {
 }
 a {
   color: inherit;
+}
+::-webkit-scrollbar {
+ display: none;
 }
 </style>

@@ -1,5 +1,9 @@
 <template>
-  <h1>Dashboard</h1>
+  <v-container grid-list-xs fluid>
+    <v-main>
+
+    </v-main>
+  </v-container>
 </template>
 
 <script>

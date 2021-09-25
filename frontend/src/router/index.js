@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Dashboard from '../views/Dashboard.vue'
-import NovoPaciente from '../views/NovoPaciente.vue'
+import Paciente from '../views/Paciente.vue'
 
 Vue.use(VueRouter)
 
@@ -14,13 +14,13 @@ const routes = [
   },
   {
     path: '/relatorio',
-    name: 'Relatorio',
+    name: 'Relatório',
     component: Dashboard
   },
   {
-    path: '/novopaciente',
-    name: 'NovoPaciente',
-    component: NovoPaciente
+    path: '/pacientes',
+    name: 'Paciente',
+    component: Paciente
   }
 ]
 
