@@ -601,10 +601,12 @@
             "format": "date-time"
           },
           "horaInicial": {
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           "horaFinal": {
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           "observacoes": {
             "type": "string"
@@ -632,10 +634,12 @@
             "format": "date-time"
           },
           "horaInicial": {
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           "horaFinal": {
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           "observacoes": {
             "type": "string"

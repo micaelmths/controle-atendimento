@@ -24,11 +24,11 @@
       "required": true
     },
     "horaInicial": {
-      "type": "time",
+      "type": "datetime",
       "required": true
     },
     "horaFinal": {
-      "type": "time",
+      "type": "datetime",
       "required": true
     },
     "observacoes": {
