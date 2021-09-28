@@ -6,7 +6,7 @@
       </v-col>
       <v-spacer></v-spacer>
       <el-table :data="buscarPacientes()" style="width: 100%">
-        <el-table-column label="Nome" prop="nome"> </el-table-column>
+        <el-table-column sortable label="Nome" prop="nome"> </el-table-column>
         <el-table-column align="right">
           <template slot="header" slot-scope="scope">
             <el-input

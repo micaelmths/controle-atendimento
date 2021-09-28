@@ -2,7 +2,7 @@
   <v-container grid-list-xs fluid>
     <v-main>
       <v-col class="d-flex justify-end">
-        <NovoPaciente />
+        <NovaSessao />
       </v-col>
       <v-spacer></v-spacer>
       <el-table :data="buscarSessoes()" style="width: 100%">
@@ -47,14 +47,14 @@
 </template>
 
 <script>
-import NovoPaciente from '@/components/pacientes/NovoPaciente'
+import NovaSessao from '@/components/sessoes/NovaSessao'
 import mocks from '@/database/mocks.json'
 import moment from 'moment'
 
 export default {
   name: 'Home',
   components: {
-    NovoPaciente
+    NovaSessao
   },
   data () {
     return {
@@ -93,14 +93,15 @@ export default {
     formatarHora (row, column, cellValue, index) {
       return moment(String(cellValue)).format('HH:mm')
     },
-    formatarNome (ow, column, cellValue, index) {
+    formatarNome (row, column, cellValue, index) {
+      const conterPacientes = row.pacientes.length
       const arrNome = cellValue.split(' ')
-      return arrNome[0]
+      return conterPacientes > 1 ? `${arrNome[0]} +${conterPacientes - 1}` : arrNome[0]
     }
   },
   async mounted () {
     await this.carregarSessoes()
-    await this.formatarData()
+    this.formatarData()
   }
 }
 </script>
