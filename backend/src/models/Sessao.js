@@ -51,8 +51,4 @@ export default class Usuario extends Model {
     });
     return this;
   }
-
-  senhaIsCorrect(senha) {
-    return bcryptjs.compare(senha, this.senha);
-  }
 }

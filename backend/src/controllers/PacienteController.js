@@ -1,10 +1,10 @@
-import Usuario from '../models/Usuario';
+import Paciente from '../models/Paciente';
 
-class UsuarioController {
+class PacienteController {
   async store(req, res) {
     try {
-      const novoUsuario = await Usuario.create(req.body);
-      return res.json(novoUsuario);
+      const novoPaciente = await Paciente.create(req.body);
+      return res.json(novoPaciente);
     } catch (error) {
       return res.status(400).json({
         errors: error.errors.map((err) => err.message),
@@ -14,9 +14,9 @@ class UsuarioController {
 
   async index(req, res) {
     try {
-      const usuarios = await Usuario.findAll();
+      const paciente = await Paciente.findAll();
 
-      return res.json(usuarios);
+      return res.json(paciente);
     } catch (error) {
       return res.json(null);
     }
@@ -25,9 +25,9 @@ class UsuarioController {
   async show(req, res) {
     try {
       const { id } = req.params;
-      const usuario = await Usuario.findByPk(id);
+      const paciente = await Paciente.findByPk(id);
 
-      return res.json(usuario);
+      return res.json(paciente);
     } catch (error) {
       return res.json(null);
     }
@@ -43,17 +43,17 @@ class UsuarioController {
         });
       }
 
-      const usuario = await Usuario.findByPk(id);
+      const paciente = await Paciente.findByPk(id);
 
-      if (!usuario) {
+      if (!paciente) {
         return res.status(400).json({
           errors: ['Usuário não existe.'],
         });
       }
 
-      const usuarioAtualizado = await usuario.update(req.body);
+      const pacienteAtualizado = await paciente.update(req.body);
 
-      return res.json(usuarioAtualizado);
+      return res.json(pacienteAtualizado);
     } catch (error) {
       return res.status(400).json({
         errors: error.errors.map((err) => err.message),
@@ -71,15 +71,15 @@ class UsuarioController {
         });
       }
 
-      const usuario = await Usuario.findByPk(id);
+      const paciente = await Paciente.findByPk(id);
 
-      if (!usuario) {
+      if (!paciente) {
         return res.status(400).json({
           errors: ['Usuário não existe.'],
         });
       }
 
-      await usuario.destroy();
+      await paciente.destroy();
 
       return res.send().status(200);
     } catch (error) {
@@ -88,4 +88,4 @@ class UsuarioController {
   }
 }
 
-export default new UsuarioController();
+export default new PacienteController();
