@@ -1,29 +1,38 @@
 {
   "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.24.2",
-    "nodemon": "^2.0.13",
-    "sequelize-cli": "^6.2.0",
-    "sucrase": "^3.20.1"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mariadb": "^2.5.4",
-    "sequelize": "^6.6.5"
-  }
+    "strapi": "3.6.8",
+    "strapi-admin": "3.6.8",
+    "strapi-utils": "3.6.8",
+    "strapi-plugin-content-type-builder": "3.6.8",
+    "strapi-plugin-content-manager": "3.6.8",
+    "strapi-plugin-users-permissions": "3.6.8",
+    "strapi-plugin-email": "3.6.8",
+    "strapi-plugin-upload": "3.6.8",
+    "strapi-plugin-i18n": "3.6.8",
+    "strapi-connector-bookshelf": "3.6.8",
+    "knex": "0.21.18",
+    "sqlite3": "5.0.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "d01756e3-9677-407b-b85f-55ab137fe39d"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": "^6.0.0"
+  },
+  "license": "MIT"
 }

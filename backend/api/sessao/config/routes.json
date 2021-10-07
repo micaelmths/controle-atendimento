@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/sessaos",
+      "handler": "sessao.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/sessaos/count",
+      "handler": "sessao.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/sessaos/:id",
+      "handler": "sessao.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/sessaos",
+      "handler": "sessao.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/sessaos/:id",
+      "handler": "sessao.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/sessaos/:id",
+      "handler": "sessao.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

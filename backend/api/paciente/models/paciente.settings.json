@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pacientes",
+  "info": {
+    "name": "Pacientes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "usuario_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

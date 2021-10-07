@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sessaos",
+  "info": {
+    "name": "Sessão",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "date",
+      "required": true
+    },
+    "hora_inicial": {
+      "type": "time",
+      "required": true
+    },
+    "hora_final": {
+      "type": "time"
+    },
+    "pacientes": {
+      "collection": "paciente"
+    },
+    "observacoes": {
+      "type": "string"
+    },
+    "profissional": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
