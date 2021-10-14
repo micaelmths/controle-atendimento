@@ -49,6 +49,8 @@
 <script>
 import NovoPaciente from '@/components/pacientes/NovoPaciente.vue'
 import mocks from '@/database/mocks.json'
+import axios from 'axios'
+import api from '@/api'
 
 export default {
   components: {
@@ -58,13 +60,11 @@ export default {
     return {
       search: '',
       tableData: [],
-      usuarioLogado: mocks.usuarioLogado
+      usuarioLogado: mocks.usuarioLogado,
+      pacientes: []
     }
   },
   computed: {
-    pacientes () {
-      return mocks.pacientes
-    }
   },
   methods: {
     handleEdit (index, row) {
@@ -77,8 +77,8 @@ export default {
       this.$refs.abrirModalNovoCliente.show()
     },
     async carregarPacientes () {
-      this.tableData = await mocks.pacientes.filter(paciente => {
-        return paciente.profissional.id === this.usuarioLogado.id
+      this.tableData = await this.pacientes.filter(paciente => {
+        return paciente.usuario_id.id === this.usuarioLogado.id
       })
     },
     buscarPacientes () {
@@ -93,6 +93,8 @@ export default {
     }
   },
   async mounted () {
+    const { data } = await axios.get(`${api.apiURL}pacientes`)
+    this.pacientes = data
     await this.carregarPacientes()
   }
 }

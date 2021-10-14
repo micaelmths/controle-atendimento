@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "sessaos",
+  "collectionName": "sections",
   "info": {
-    "name": "Sessão",
-    "description": ""
+    "name": "Section"
   },
   "options": {
     "increments": true,
@@ -16,22 +15,23 @@
       "type": "date",
       "required": true
     },
-    "hora_inicial": {
+    "horaInicial": {
       "type": "time",
       "required": true
     },
-    "hora_final": {
-      "type": "time"
+    "horaFinal": {
+      "type": "time",
+      "required": true
     },
     "pacientes": {
       "collection": "paciente"
     },
-    "observacoes": {
-      "type": "string"
-    },
-    "profissional": {
+    "profissional_id": {
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "observacoes": {
+      "type": "string"
     }
   }
 }

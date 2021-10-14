@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/sessaos",
-      "handler": "sessao.find",
+      "path": "/sections",
+      "handler": "section.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/sessaos/count",
-      "handler": "sessao.count",
+      "path": "/sections/count",
+      "handler": "section.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/sessaos/:id",
-      "handler": "sessao.findOne",
+      "path": "/sections/:id",
+      "handler": "section.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/sessaos",
-      "handler": "sessao.create",
+      "path": "/sections",
+      "handler": "section.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/sessaos/:id",
-      "handler": "sessao.update",
+      "path": "/sections/:id",
+      "handler": "section.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/sessaos/:id",
-      "handler": "sessao.delete",
+      "path": "/sections/:id",
+      "handler": "section.delete",
       "config": {
         "policies": []
       }

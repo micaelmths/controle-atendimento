@@ -19,6 +19,16 @@
                 <v-text-field label="Nome completo" required></v-text-field>
               </v-col>
             </v-row>
+            <v-row>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field label="Nome completo" required></v-text-field>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field label="Nome completo" required></v-text-field>
+              </v-col>
+            </v-row>
           </v-container>
         </v-card-text>
         <v-card-actions>
