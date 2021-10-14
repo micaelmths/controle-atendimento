@@ -93,6 +93,9 @@ export default {
     }
   },
   async mounted () {
+    await this.carregarPacientes()
+  },
+  async created () {
     const { data } = await axios.get(`${api.apiURL}pacientes`)
     this.pacientes = data
     await this.carregarPacientes()
