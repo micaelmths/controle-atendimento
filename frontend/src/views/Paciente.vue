@@ -2,7 +2,7 @@
   <v-container grid-list-xs fluid>
     <v-main>
       <v-col class="d-flex justify-end">
-        <NovoPaciente/>
+        <NovoPaciente @evtCarregarPacientes="buscarPacientesApi"/>
       </v-col>
       <v-spacer></v-spacer>
       <el-table :data="buscarPacientes()" style="width: 100%">
@@ -49,8 +49,7 @@
 <script>
 import NovoPaciente from '@/components/pacientes/NovoPaciente.vue'
 import mocks from '@/database/mocks.json'
-import axios from 'axios'
-import api from '@/api'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   components: {
@@ -60,18 +59,32 @@ export default {
     return {
       search: '',
       tableData: [],
-      usuarioLogado: mocks.usuarioLogado,
-      pacientes: []
+      usuarioLogado: mocks.usuarioLogado
     }
   },
   computed: {
+    ...mapState(['pacientes'])
   },
   methods: {
+    ...mapActions(['buscarPacientesApi', 'deletarPaciente']),
     handleEdit (index, row) {
       console.log(index, row)
     },
     handleDelete (index, row) {
-      console.log(index, row)
+      this.$confirm(`Deseja deletar ${row.nome} ?`, {
+        confirmButtonText: 'OK',
+        cancelButtonText: 'Cancel',
+        title: 'Deletar paciente',
+        type: 'error'
+      }).then(() => {
+        this.deletarPaciente(row.id)
+        this.$message({
+          type: 'success',
+          message: 'Paciente deletado'
+        })
+      }).catch(() => {
+
+      })
     },
     abrirModalNovoCliente () {
       this.$refs.abrirModalNovoCliente.show()
@@ -92,12 +105,15 @@ export default {
       return this.tableData
     }
   },
+  watch: {
+    pacientes () {
+      this.carregarPacientes()
+    }
+  },
   async mounted () {
-    await this.carregarPacientes()
+    this.buscarPacientesApi()
   },
   async created () {
-    const { data } = await axios.get(`${api.apiURL}pacientes`)
-    this.pacientes = data
     await this.carregarPacientes()
   }
 }
